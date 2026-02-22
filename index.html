@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frontend Demo</title>
+</head>
+<body>
+  <h1>Azure Static Web App</h1>
+  <button onclick="callAPI()">Call Backend</button>
+  <p id="result"></p>
+
+  <script>
+    async function callAPI() {
+      const response = await fetch("https://backend-container-app.ashysea-b425ae15.eastus.azurecontainerapps.io");
+      const data = await response.json();
+      document.getElementById("result").innerText = data.message;
+    }
+  </script>
+</body>
+</html>
